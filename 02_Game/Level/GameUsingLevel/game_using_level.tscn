@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://lv51vysnb6bf"]
+
+[ext_resource type="Script" uid="uid://88nbamnoek7g" path="res://02_Game/Level/GameUsingLevel/game_using_level.gd" id="1_t6gyt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_t6gyt"]
+
+[node name="GameUsingLevel" type="Node2D" unique_id=1732424766]
+script = ExtResource("1_t6gyt")
+
+[node name="UiControl" type="CanvasLayer" parent="." unique_id=114521495]
+
+[node name="Sprites" type="Node2D" parent="UiControl" unique_id=1862267603]
+
+[node name="BackGround" type="Sprite2D" parent="UiControl/Sprites" unique_id=1657422531]
+scale = Vector2(9086.001, 5100)
+texture = SubResource("CanvasTexture_t6gyt")
+
+[node name="LoginSystem" type="Control" parent="UiControl" unique_id=1235982119]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="ButtonGroup" type="VBoxContainer" parent="UiControl/LoginSystem" unique_id=1763934318]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Login" type="Button" parent="UiControl/LoginSystem/ButtonGroup" unique_id=638059396]
+layout_mode = 2
+text = "登录"
+
+[node name="Register" type="Button" parent="UiControl/LoginSystem/ButtonGroup" unique_id=761187498]
+layout_mode = 2
+text = "注册"

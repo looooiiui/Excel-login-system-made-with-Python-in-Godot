@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Godot Excel Spreadsheet"
+run/main_scene="uid://lv51vysnb6bf"
+config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.2445262, 0.069207825, 0.13746563, 1)
+config/icon="res://icon.svg"
+
+[autoload]
+
+LoginSystem="*uid://cjsvlnukbgsji"
+
+[dotnet]
+
+project/assembly_name="Godot Excel Spreadsheet"
+
+[gui]
+
+theme/custom="uid://cay2mpu872gbh"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
