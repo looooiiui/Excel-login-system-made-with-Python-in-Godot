@@ -4,6 +4,7 @@ extends Node2D
 signal login_success
 signal login_out
 
+# 登录和注册两个子管理器
 @export var Login		: Node2D
 @export var Register	: Node2D
 
@@ -11,6 +12,8 @@ signal login_out
 var current_account_id: String 	= ""
 var is_Login: bool 				= false
 
+# 主管理器提供统一 Excel 文件地址，这里使用绝对地址，当然也可以使用相对Godot的相对地址
+# 主管理器同样要提供 Python脚本 的地址，下文会说明
 var excel_path = "D:/GodotProject/Godot Excel Spreadsheet/godot-excel-spreadsheet/06_GameData/ServerData/GameDataExcel.xlsx"
 var python_script = "res://06_GameData/ServerData/FileProcessingMain.py"
 
