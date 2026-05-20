@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cg2jnqi5803q8"]
+
+[ext_resource type="Script" uid="uid://dnyxsea6xr8pv" path="res://02_Game/LoginInformation/UiControl/UiControl/ui_control.gd" id="1_7nxne"]
+[ext_resource type="PackedScene" uid="uid://d1c2in5esqnyf" path="res://02_Game/LoginInformation/login_information.tscn" id="2_d5svc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_baaq4"]
+
+[node name="Level1" type="Node2D" unique_id=440801248]
+
+[node name="Sprites" type="Node2D" parent="." unique_id=2111004075]
+
+[node name="Back" type="Sprite2D" parent="Sprites" unique_id=1215942066]
+position = Vector2(560, 308)
+scale = Vector2(3117.9998, 1907.9999)
+texture = SubResource("CanvasTexture_baaq4")
+
+[node name="UiControl" type="CanvasLayer" parent="." unique_id=69912227]
+
+[node name="UiControl" type="Control" parent="UiControl" unique_id=687738819]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7nxne")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UiControl/UiControl" unique_id=1882032541]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -44.0
+offset_right = 98.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoginInformation" parent="UiControl/UiControl/VBoxContainer" unique_id=1802543293 instance=ExtResource("2_d5svc")]
+layout_mode = 2
+text = " "
+
+[node name="ExitLogin" type="Button" parent="UiControl/UiControl/VBoxContainer" unique_id=93895351]
+layout_mode = 2
+text = "退出登录"
+
+[connection signal="pressed" from="UiControl/UiControl/VBoxContainer/ExitLogin" to="UiControl/UiControl" method="_on_exit_login_pressed"]

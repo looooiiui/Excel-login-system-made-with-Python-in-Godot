@@ -22,6 +22,12 @@ default_excel_path_index:       int = 1       # 默认Excel位置
 default_order_name_index:       int = 3       # 默认名字位置
 default_order_pwd_index:        int = 4       # 默认密码位置
 default_godot_argv_len:         int = 5       # 默认传参长度
+#=============指定参数==============#
+
+#=============指定命令==============#
+godot_login:        str = "0"
+godot_register:     str = "1"
+#=============指定命令==============#
 
 """
 以下所有函数面向Godot返回
@@ -75,6 +81,7 @@ def register_verify(input_register_info: Optional[list[str]]) -> None:
     except Exception as e:
         # 注册程序运行失败
         print("-1")
+    
 """
 返回 -1 为程序运行出错
 返回 -2 为程序输入变量不足
@@ -89,10 +96,12 @@ if __name__ == "__main__":
         default_save_exc_name   = receive_params[default_excel_path_index]
         input_name              = receive_params[default_order_name_index]
         input_pwd               = receive_params[default_order_pwd_index] 
-        input_login_info: list[str] = [input_name, input_pwd]
+        input_info: list[str] = [input_name, input_pwd]
         # 登录验证请求
-        if (godot_order == "0"):
-            login_verify(input_login_info)
+        if (godot_order == godot_login):
+            login_verify(input_info)
+        if (godot_order == godot_register):
+            register_verify(input_info)
 
     else:
         print("-2")

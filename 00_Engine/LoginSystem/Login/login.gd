@@ -32,7 +32,6 @@ func login_info_verify(input_info: Array[String]) -> String:
 				
 	# 返回结果
 	var result_output: String = "".join(receive_return).strip_escapes()
-	print(result_output)	
 	return result_output
 	
 				

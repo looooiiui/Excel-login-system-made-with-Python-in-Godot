@@ -116,17 +116,18 @@ def read_from_excel(file_read_path: str,
             read_excel.close()
         return None
     
+"""
+账户注册处理
+返回-1: 程序运行出错
+返回0 : 注册成功
+返回1 : 账户注册出现问题(非法字符/账户密码问题)
+返回2 : 账户已被注册
+"""    
 # 插入新玩家数据
 def write_new_account(read_data_name: str,
                       file_read_path: str,
                       new_account_information: Optional[list[str]]) -> tuple[bool, int]:
-    """
-    账户注册处理
-    返回-1: 程序运行出错
-    返回0 : 注册成功
-    返回1 : 账户注册出现问题(非法字符/账户密码问题)
-    返回2 : 账户已被注册
-    """
+
     # 传入空列表处理
     if new_account_information is None:
         return False, -1

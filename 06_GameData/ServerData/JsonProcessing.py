@@ -128,20 +128,20 @@ def convert_dir_to_json(out_dir: dict, json_out_path: str) -> None:
     except Exception as e:
         log(f"字典创建JSON失败: {str(e)}")
 
+"""
+校验玩家登录信息（账号 + 密码）
+
+返回值说明:
+- 元组第1位:是否校验通过(True=通过,False=不通过)
+- 元组第2位:状态码
+    - 0 : 账号验证通过
+    - 1 : 账户信息不存在
+    - 2 : 账号信息验证错误（信息不全/密码错误）
+"""
 # 校验登录信息
 def detect_login_information(input_info_dict: dict, 
                              login_info: Optional[list[str]]
                              ) -> tuple[bool, int]:
-    """
-    校验玩家登录信息（账号 + 密码）
-    
-    返回值说明:
-    - 元组第1位:是否校验通过(True=通过,False=不通过)
-    - 元组第2位:状态码
-      - 0 : 账号验证通过
-      - 1 : 账户信息不存在
-      - 2 : 账号信息验证错误（信息不全/密码错误）
-    """
 
     if login_info is None:
         log("登录验证: 传入的是空信息")

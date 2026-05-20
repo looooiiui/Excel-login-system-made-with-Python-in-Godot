@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://lv51vysnb6bf"]
 
 [ext_resource type="Script" uid="uid://88nbamnoek7g" path="res://02_Game/Level/GameUsingLevel/game_using_level.gd" id="1_t6gyt"]
+[ext_resource type="Script" uid="uid://31njmj2flpvm" path="res://02_Game/Level/GameUsingLevel/UiControl/ui_control.gd" id="2_4uw55"]
+[ext_resource type="PackedScene" uid="uid://bwqbcwn46lr" path="res://02_Game/GameSystem/LoginSystem/login_system.tscn" id="2_p8v8a"]
+[ext_resource type="PackedScene" uid="uid://d1c2in5esqnyf" path="res://02_Game/LoginInformation/login_information.tscn" id="4_gkkvs"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_t6gyt"]
 
@@ -8,6 +11,8 @@
 script = ExtResource("1_t6gyt")
 
 [node name="UiControl" type="CanvasLayer" parent="." unique_id=114521495]
+script = ExtResource("2_4uw55")
+Login_System = ExtResource("2_p8v8a")
 
 [node name="Sprites" type="Node2D" parent="UiControl" unique_id=1862267603]
 
@@ -15,27 +20,6 @@ script = ExtResource("1_t6gyt")
 scale = Vector2(9086.001, 5100)
 texture = SubResource("CanvasTexture_t6gyt")
 
-[node name="LoginSystem" type="Control" parent="UiControl" unique_id=1235982119]
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
-grow_horizontal = 2
-
-[node name="ButtonGroup" type="VBoxContainer" parent="UiControl/LoginSystem" unique_id=1763934318]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-grow_horizontal = 2
-
-[node name="Login" type="Button" parent="UiControl/LoginSystem/ButtonGroup" unique_id=638059396]
-layout_mode = 2
-text = "登录"
-
-[node name="Register" type="Button" parent="UiControl/LoginSystem/ButtonGroup" unique_id=761187498]
-layout_mode = 2
-text = "注册"
+[node name="LoginInformation" parent="UiControl" unique_id=1802543293 instance=ExtResource("4_gkkvs")]
+offset_right = 101.0
+offset_bottom = 42.0

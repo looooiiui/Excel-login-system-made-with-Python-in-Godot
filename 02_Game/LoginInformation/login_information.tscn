@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d1c2in5esqnyf"]
+
+[ext_resource type="Script" uid="uid://32qk5jf11hpe" path="res://02_Game/LoginInformation/login_information.gd" id="1_lohgw"]
+
+[node name="LoginInformation" type="Label" unique_id=1802543293]
+script = ExtResource("1_lohgw")

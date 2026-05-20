@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 func _ready() -> void:
 	_signal_initialize()
@@ -9,5 +9,5 @@ func _signal_initialize() -> void:
 
 # 连接成功，登录界面系统退出
 func _on_login_success() -> void:
-	await get_tree().create_timer(1.0).timeout
-	get_tree().change_scene_to_file("res://02_Game/Level/Level1/level_1.tscn")
+	queue_free()
+	
