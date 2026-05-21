@@ -77,10 +77,10 @@ def register_verify(input_register_info: Optional[list[str]]) -> None:
     
     try:
         # 验证注册信息并写入
-        varify_result: tuple = write_new_account(default_exc_data_player, 
+        verify_result: tuple = write_new_account(default_exc_data_player, 
                                                  default_save_exc_name, 
                                                  input_register_info)
-        print(str(varify_result[1]))
+        print(str(verify_result[1]))
 
     except Exception as e:
         # 注册程序运行失败
